@@ -1,4 +1,4 @@
-from AuxiliaryCNN import csvManager, text_to_labels, get_batch, var_to_cpu
+from AuxiliaryCNN import csvManager, text_to_labels, get_batch
 import numpy as np
 import tensorflow as tf
 
