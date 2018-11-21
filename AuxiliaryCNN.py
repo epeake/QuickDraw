@@ -192,7 +192,7 @@ def get_batch(csvM, label_to_class, class_eye, batch_size):
     return np.expand_dims(X, axis=3), Y   # add chanel dim
 
 
-def var_to_cpu(op, cpu, gpu):
+def var_to_cpu(op):
     """
     Places an operation on the gpu unless it is a variable
 

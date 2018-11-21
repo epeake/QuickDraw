@@ -2,7 +2,7 @@ from AuxiliaryCNN import csvManager, text_to_labels, get_batch, var_to_cpu
 import numpy as np
 import tensorflow as tf
 
-FILEPATH = "/Users/epeake/Desktop/Google-Doodles/"
+FILEPATH = "/data/scratch/epeake/Google-Doodles/"
 BATCH_SIZE = 100
 height = 256
 width = 256
@@ -64,7 +64,3 @@ with tf.Session() as sess:
         csvM.close_files()
 
     save_path = saver.save(sess, "./quick_draw_model")
-
-
-# if __name__ == "__main__":
-#     filepath = sys.argv[1]
