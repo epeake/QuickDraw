@@ -13,7 +13,7 @@ class_eye = np.eye(len(label_to_class))
 n_outputs = len(label_to_class)
 learning_rate = 0.009
 
-with tf.device(var_to_cpu):
+with tf.device("/gpu:0"):
     X = tf.placeholder("float", [None, height, width, 1])   # [None, height, width, channels]
     Y = tf.placeholder("float", [None, n_outputs])       # [None, classes]
 
@@ -40,11 +40,12 @@ with tf.device(var_to_cpu):
 
 
 init = tf.global_variables_initializer()
+config = tf.ConfigProto()
+config.allow_soft_placement = True
 saver = tf.train.Saver()
 
-
 n_epochs = 10
-with tf.Session() as sess:
+with tf.Session(config) as sess:
     init.run()
     for epoch in range(n_epochs):
         total_correct = 0

@@ -191,16 +191,3 @@ def get_batch(csvM, label_to_class, class_eye, batch_size):
 
     return np.expand_dims(X, axis=3), Y   # add chanel dim
 
-
-def var_to_cpu(op):
-    """
-    Places an operation on the gpu unless it is a variable
-
-    :param op: (tf op)
-    :return: cpu or gpu device string
-    """
-    if op.type == "Variable":
-        return "/cpu:0"
-
-    else:
-        return "/gpu:0"
