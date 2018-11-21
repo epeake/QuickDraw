@@ -1,10 +1,6 @@
-from AuxiliaryCNN import csvManager, text_to_labels, get_batch
+from AuxiliaryCNN import csvManager, text_to_labels, get_batch, var_to_cpu
 import numpy as np
 import tensorflow as tf
-
-# for debugging
-tf.set_random_seed(1)
-np.random.seed(1)
 
 FILEPATH = "/Users/epeake/Desktop/Google-Doodles/"
 BATCH_SIZE = 100
@@ -14,53 +10,34 @@ csvM = csvManager(FILEPATH)
 csvM.open_files()
 label_to_class = text_to_labels(csvM)
 class_eye = np.eye(len(label_to_class))
-
-# conv1 params
-conv1_n_fills = 10
-conv1_kernel = 3
-conv1_stride = 1
-conv1_pad = "same"
-
-# conv2 params
-conv2_n_fills = 20
-conv2_kernel = 5
-conv2_stride = 2
-conv2_pad = "valid"
-
-# logits
 n_outputs = len(label_to_class)
-
-# optimization
 learning_rate = 0.009
 
+with tf.device(var_to_cpu):
+    X = tf.placeholder("float", [None, height, width, 1])   # [None, height, width, channels]
+    Y = tf.placeholder("float", [None, n_outputs])       # [None, classes]
 
-X = tf.placeholder("float", [None, height, width, 1])   # [None, height, width, channels]
-Y = tf.placeholder("float", [None, n_outputs])       # [None, classes]
+    W1 = tf.get_variable("W1", [3, 3, 1, 10], initializer=tf.contrib.layers.xavier_initializer())
+    conv1 = tf.nn.conv2d(X, W1, strides=[1, 1, 1, 1], padding="SAME", name="conv1")
+    active1 = tf.nn.relu(conv1)
+    pool1 = tf.nn.max_pool(active1, ksize=[1, 4, 4, 1], strides=[1, 4, 4, 1], padding='VALID', name="pool1")
 
-conv1 = tf.layers.conv2d(X, filters=conv1_n_fills, kernel_size=conv1_kernel,
-                         strides=conv1_stride, padding=conv1_pad,
-                         activation=tf.nn.relu, name="conv1")
+    W2 = tf.get_variable("W2", [5, 5, 10, 20], initializer=tf.contrib.layers.xavier_initializer())
+    conv2 = tf.nn.conv2d(pool1, W2, strides=[1, 2, 2, 1], padding="SAME", name="conv2")
+    active2 = tf.nn.relu(conv2)
+    pool2 = tf.nn.max_pool(active2, ksize=[1, 5, 5, 1], strides=[1, 2, 2, 1], padding='VALID', name="pool2")
 
-pool1 = tf.layers.max_pooling2d(conv1, pool_size=(2, 2), strides=1, padding='valid', name="pool1")
+    pre_fully_connected = tf.contrib.layers.flatten(pool2)
+    fully_connected_1 = tf.layers.dense(pre_fully_connected, 64, activation=tf.nn.relu, name="fc1")
+    logits = tf.layers.dense(fully_connected_1, n_outputs, activation=tf.nn.relu, name="fc2")
 
-conv2 = tf.layers.conv2d(pool1, filters=conv2_n_fills, kernel_size=conv2_kernel,
-                         strides=conv2_stride, padding=conv2_pad,
-                         activation=tf.nn.relu, name="conv2")
+    loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y, name="softmax"))
 
-pool2 = tf.layers.max_pooling2d(conv2, pool_size=(5, 5), strides=2, padding='valid', name="pool2")
+    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
 
-pre_fully_connected = tf.contrib.layers.flatten(pool2)
+    correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(Y, 1))
+    n_correct = tf.reduce_sum(tf.cast(correct_prediction, "float"))
 
-fully_connected_1 = tf.layers.dense(pre_fully_connected, 64, activation=tf.nn.relu, name="fc1")
-
-logits = tf.layers.dense(fully_connected_1, n_outputs, activation=tf.nn.relu, name="fc2")
-
-# TODO: Fix loss function and check architecture
-loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits, labels=Y, name="softmax"))
-
-optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
-
-correct = tf.nn.in_top_k(logits, Y, 1)
 
 init = tf.global_variables_initializer()
 saver = tf.train.Saver()
@@ -70,22 +47,24 @@ n_epochs = 10
 with tf.Session() as sess:
     init.run()
     for epoch in range(n_epochs):
+        total_correct = 0
         csvM = csvManager(FILEPATH)
         csvM.open_files()
         X_len = 1
+        batch_number = 1
         while X_len:
             # this cycle is for dividing step by step the heavy work of each neuron
             X_batch, Y_batch = get_batch(csvM, label_to_class, class_eye, BATCH_SIZE)
             sess.run(optimizer, feed_dict={X: X_batch, Y: Y_batch})
+            total_correct += n_correct.eval({X: X_batch, Y: Y_batch})
+            train_accuracy = total_correct / (batch_number * BATCH_SIZE)
+            print("Epoch:", epoch + 1, "Batch Number:", batch_number, "Train accuracy:", train_accuracy)
             X_len = len(X_batch)
-            n_correct = correct.eval(feed_dict={Y: Y_batch})
-            acc_train = n_correct / len(Y_batch)
-            print("Epoch:", epoch + 1, "Train accuracy:", acc_train)
+            batch_number += 1
         csvM.close_files()
 
-    save_path = saver.save(sess, "./my_fashion_model")
+    save_path = saver.save(sess, "./quick_draw_model")
 
 
-# TODO: Make run in command line
 # if __name__ == "__main__":
 #     filepath = sys.argv[1]

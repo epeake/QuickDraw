@@ -182,11 +182,25 @@ def get_batch(csvM, label_to_class, class_eye, batch_size):
     :param batch_size: (int)
     :return: (tuple of np.arrays)
     """
-    X = None
+    X = []
     file_batch = csvM.read_lines(batch_size)
     Y = class_to_one_hot(file_batch, label_to_class, class_eye)
     for file in file_batch:
         pixels = get_pixels(file["points"])
         X.append(draw_picture(pixels))
 
-    return X, Y
+    return np.expand_dims(X, axis=3), Y   # add chanel dim
+
+
+def var_to_cpu(op, cpu, gpu):
+    """
+    Places an operation on the gpu unless it is a variable
+
+    :param op: (tf op)
+    :return: cpu or gpu device string
+    """
+    if op.type == "Variable":
+        return "/cpu:0"
+
+    else:
+        return "/gpu:0"
