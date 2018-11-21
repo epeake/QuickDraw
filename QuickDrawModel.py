@@ -11,9 +11,9 @@ csvM.open_files()
 label_to_class = text_to_labels(csvM)
 class_eye = np.eye(len(label_to_class))
 n_outputs = len(label_to_class)
-learning_rate = 0.009
+learning_rate = 0.01
 
-with tf.device("/gpu:0"):
+with tf.device("/gpu:1"):
     X = tf.placeholder("float", [None, height, width, 1])   # [None, height, width, channels]
     Y = tf.placeholder("float", [None, n_outputs])       # [None, classes]
 
@@ -32,20 +32,17 @@ with tf.device("/gpu:0"):
     logits = tf.layers.dense(fully_connected_1, n_outputs, activation=tf.nn.relu, name="fc2")
 
     loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y, name="softmax"))
-
     optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
-
     correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(Y, 1))
     n_correct = tf.reduce_sum(tf.cast(correct_prediction, "float"))
 
 
+n_epochs = 1
 init = tf.global_variables_initializer()
+saver = tf.train.Saver()
 config = tf.ConfigProto()
 config.allow_soft_placement = True
-saver = tf.train.Saver()
-
-n_epochs = 10
-with tf.Session(config) as sess:
+with tf.Session(config=config) as sess:
     init.run()
     for epoch in range(n_epochs):
         total_correct = 0
@@ -54,7 +51,6 @@ with tf.Session(config) as sess:
         X_len = 1
         batch_number = 1
         while X_len:
-            # this cycle is for dividing step by step the heavy work of each neuron
             X_batch, Y_batch = get_batch(csvM, label_to_class, class_eye, BATCH_SIZE)
             sess.run(optimizer, feed_dict={X: X_batch, Y: Y_batch})
             total_correct += n_correct.eval({X: X_batch, Y: Y_batch})
