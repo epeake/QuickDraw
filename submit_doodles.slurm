@@ -10,4 +10,4 @@
 
 module load cuda
 
-CUDA_VISIBLE_DEVICES=1 /home/epeake/venv/mainenv/bin/python3 -u mike_test.py -W
+CUDA_VISIBLE_DEVICES=1 /home/epeake/venv/mainenv/bin/python3 -u QuickDrawModel.py -W
