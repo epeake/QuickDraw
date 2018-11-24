@@ -4,19 +4,26 @@ A slightly modified VGG Network
 from AuxiliaryCNN import csv_generator, text_to_labels, get_batch
 import numpy as np
 import tensorflow as tf
+from subprocess import check_output
+from re import search
 
-# DIRPATH = "/data/scratch/epeake/Google-Doodles/"
-DIRPATH = '/Users/epeake/Desktop/Google-Doodles/'
-BATCH_SIZE = 30
-height = 256
-width = 256
+# constants
+DIRPATH = "/data/scratch/epeake/Google-Doodles/"
+BATCH_SIZE = 100
+HEIGHT = 256
+WIDTH = 256
+N_EPOCHS = 1
+LEARNING_RATE = 0.00006
+
 label_to_class = text_to_labels(DIRPATH)
 class_eye = np.eye(len(label_to_class))
 n_outputs = len(label_to_class)
-learning_rate = 0.00006
+csv_len = str(check_output("wc -l " + DIRPATH + "all_doodles.csv", shell=True))
+csv_len = int(search("[0-9]+", csv_len).group())
+
 
 with tf.device("/gpu:1"):
-    X = tf.placeholder("float", [None, height, width, 1])   # [None, height, width, channels]
+    X = tf.placeholder("float", [None, HEIGHT, WIDTH, 1])   # [None, HEIGHT, width, channels]
     Y = tf.placeholder("float", [None, n_outputs])       # [None, classes]
 
     W_1_1 = tf.get_variable("W_1_1", [3, 3, 1, 64], initializer=tf.contrib.layers.xavier_initializer())
@@ -74,32 +81,33 @@ with tf.device("/gpu:1"):
     logits = tf.layers.dense(fully_connected_1, n_outputs, activation=tf.nn.relu, name="fc3")
 
     loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y, name="softmax"))
-    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
+    optimizer = tf.train.AdamOptimizer(learning_rate=LEARNING_RATE).minimize(loss)
     correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(Y, 1))
     n_correct = tf.reduce_sum(tf.cast(correct_prediction, "float"))
 
 
-n_epochs = 2
 init = tf.global_variables_initializer()
 saver = tf.train.Saver()
 config = tf.ConfigProto(device_count={'GPU': 1})
 config.allow_soft_placement = True
 with tf.Session(config=config) as sess:
     init.run()
-    for epoch in range(n_epochs):
-        total_correct = 0
+    batch_number = 1
+    total_correct = 0
+    for epoch in range(N_EPOCHS):
         csv_gen = csv_generator(DIRPATH, BATCH_SIZE)
-        batch_number = 1
         while True:
             try:
                 X_batch, Y_batch = get_batch(csv_gen, label_to_class, class_eye)
             except StopIteration:
-                print("stop")
                 break
             sess.run(optimizer, feed_dict={X: X_batch, Y: Y_batch})
             total_correct += n_correct.eval({X: X_batch, Y: Y_batch})
             train_accuracy = total_correct / (batch_number * BATCH_SIZE)
             print("Epoch:", epoch + 1, "Batch Number:", batch_number, "Train accuracy:", train_accuracy)
             batch_number += 1
+            if batch_number == 10:
+                break
 
+    print("Total accuracy: ", total_correct / (csv_len * N_EPOCHS))
     save_path = saver.save(sess, "./quick_draw_model")
