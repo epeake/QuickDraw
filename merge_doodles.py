@@ -1,7 +1,6 @@
 """
 Takes all csv files in a directory and combines them into one large csv file.
 """
-
 import os
 import sys
 import shutil
@@ -13,9 +12,7 @@ else:
 
 csv_files = [file for file in os.listdir(DATA_DIR) if file.find(".csv") != -1]
 
-print(csv_files)
-
-with open(sys.argv[2], "w") as out:
+with open(DATA_DIR + "all_doodles.csv", "w") as out:
     for file in csv_files:
         with open(DATA_DIR + file) as f:
             next(f)   # skip header

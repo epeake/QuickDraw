@@ -1,20 +1,19 @@
 """
 A slightly modified VGG Network
 """
-from AuxiliaryCNN import csvManager, text_to_labels, get_batch
+from AuxiliaryCNN import csv_generator, text_to_labels, get_batch
 import numpy as np
 import tensorflow as tf
 
-FILEPATH = "/data/scratch/epeake/Google-Doodles/"
-BATCH_SIZE = 100
+# DIRPATH = "/data/scratch/epeake/Google-Doodles/"
+DIRPATH = '/Users/epeake/Desktop/Google-Doodles/'
+BATCH_SIZE = 30
 height = 256
 width = 256
-csvM = csvManager(FILEPATH)
-csvM.open_files()
-label_to_class = text_to_labels(csvM)
+label_to_class = text_to_labels(DIRPATH)
 class_eye = np.eye(len(label_to_class))
 n_outputs = len(label_to_class)
-learning_rate = 0.0003
+learning_rate = 0.00006
 
 with tf.device("/gpu:1"):
     X = tf.placeholder("float", [None, height, width, 1])   # [None, height, width, channels]
@@ -80,7 +79,7 @@ with tf.device("/gpu:1"):
     n_correct = tf.reduce_sum(tf.cast(correct_prediction, "float"))
 
 
-n_epochs = 5
+n_epochs = 2
 init = tf.global_variables_initializer()
 saver = tf.train.Saver()
 config = tf.ConfigProto(device_count={'GPU': 1})
@@ -89,18 +88,18 @@ with tf.Session(config=config) as sess:
     init.run()
     for epoch in range(n_epochs):
         total_correct = 0
-        csvM = csvManager(FILEPATH)
-        csvM.open_files()
-        X_len = 1
+        csv_gen = csv_generator(DIRPATH, BATCH_SIZE)
         batch_number = 1
-        while X_len:
-            X_batch, Y_batch = get_batch(csvM, label_to_class, class_eye, BATCH_SIZE)
+        while True:
+            try:
+                X_batch, Y_batch = get_batch(csv_gen, label_to_class, class_eye)
+            except StopIteration:
+                print("stop")
+                break
             sess.run(optimizer, feed_dict={X: X_batch, Y: Y_batch})
             total_correct += n_correct.eval({X: X_batch, Y: Y_batch})
             train_accuracy = total_correct / (batch_number * BATCH_SIZE)
             print("Epoch:", epoch + 1, "Batch Number:", batch_number, "Train accuracy:", train_accuracy)
-            X_len = len(X_batch)
             batch_number += 1
-        csvM.close_files()
 
     save_path = saver.save(sess, "./quick_draw_model")

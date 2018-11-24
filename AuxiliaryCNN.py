@@ -3,97 +3,59 @@ Module contains the auxiliary functions necessary to train a CNN for Google's Qu
 
 Functions are optimized to handle massive datasets without using too much RAM.
 """
-
-import numpy as np
 import os
-import random
+import numpy as np
+from subprocess import call, check_output
+from re import search
 
 
-class csvManager:
+def process_lines(raw_lines):
     """
-    Manager for csv files.  Can randomly read batches of entries from multiple csv files so we don't have to store
-    entire csv files in memory
+    Converts a list of lines into a list of usable doodle entries to be drawn
+
+    :param raw_lines: (list of strings
+    :return: (list of dictionaries) our entries
     """
-    def __init__(self, filepath):
-        """
-        Constructor for csvManager.  Stores file names to be open in given filepath
+    lines = []
+    for line in raw_lines:
+        split_line = line.split('"')  # split line so we can extract points
+        pre_points = eval(split_line[1])
+        points = []
+        for segment in pre_points:
+            points.append([(x, y) for x, y in zip(segment[0], segment[1])])
+        part_of_line = split_line[2].split(",")
+        recognized = eval(part_of_line[2])
+        label = part_of_line[-1].strip()
+        lines.append({"points": points, "recognized": recognized, "label": label})
 
-        :param filepath: (string) Directory must contain exclusively csv files to be loaded
-        """
-        self.filepath = filepath
-        self.files = os.listdir(filepath)
-        self.files_opened = None
+    return lines
 
-    def open_files(self):
-        """
-        Opens each of the files, stores them in a list, and removes the first line of colnames
-        """
-        if self.filepath[-1] != "/":   # so we can add the filename to the filepath
-            self.filepath += "/"
 
-        self.files_opened = [open(self.filepath + f) for f in self.files]
-        for f in self.files_opened:
-            next(f)  # skip colnames
+def csv_generator(dir_path, batch_size, shuffle=True):
+    """
+    Shuffles a csv file, then yields batches of its entries
 
-    def close_files(self):
-        """
-        Closes all files.
-        """
-        if self.files_opened:
-            for f in self.files_opened:
-                f.close()
-
-    def _try_line(self):
-        """
-        Returns a line if available.  Closes exhausted files along the way.
-
-        :return: (string) line or None
-        """
-        if not self.files_opened:
-            print("files exhausted")
-
-        else:
-            index = random.randint(0, len(self.files_opened) - 1)
-            try:
-                return next(self.files_opened[index])
-
-            except StopIteration:  # file exhausted, try another
-                self.files_opened[index].close()
-                self.files_opened.pop(index)
-                return self._try_line()
-
-    def read_lines(self, n):
-        """
-        Read in n files from all stored, opened files.
-
-        :param n: (int) number of files
-        :return: (list of dictionaries) our entries
-        """
-        if not self.files_opened:
-            print("files must first be opened")
-
-        else:
-            raw_lines = []
-            for _ in range(n):
-                line = self._try_line()   # need to see if has value or is none (files exhausted)
-                if line:
-                    raw_lines.append(line)
-                else:
-                    break
-
+    :param dir_path: (string)
+    :param batch_size: (int)
+    :param shuffle: (bool) should we shuffle our csv before taking batches?
+    :yield: (list of dictionaries) our batch's entries
+    """
+    if shuffle:
+        # shuffle all entries (this can take a while if large)
+        call("sort -R -o " + dir_path + "all_doodles.csv" + " " + dir_path + "all_doodles.csv", shell=True)
+    num_entries = str(check_output("wc -l " + dir_path + "all_doodles.csv", shell=True))
+    num_entries = int(search("[0-9]+", num_entries).group())
+    with open(dir_path + "all_doodles.csv") as file:
+        for i in range(num_entries // batch_size):
             lines = []
-            for line in raw_lines:
-                split_line = line.split('"')  # split line so we can extract points
-                pre_points = eval(split_line[1])
-                points = []
-                for segment in pre_points:
-                    points.append([(x, y) for x, y in zip(segment[0], segment[1])])
-                part_of_line = split_line[2].split(",")
-                recognized = eval(part_of_line[2])
-                label = part_of_line[-1].strip()
-                lines.append({"points": points, "recognized": recognized, "label": label})
+            for _ in range(batch_size):
+                lines.append(file.readline())
+            yield process_lines(lines)
 
-            return lines
+        lines = []
+        for _ in range(num_entries % batch_size):
+            lines.append(file.readline())
+        yield process_lines(lines)
 
 
 def get_pixels(points):
@@ -147,14 +109,15 @@ def draw_picture(pixels):
     return picture
 
 
-def text_to_labels(csvM):
+def text_to_labels(dir_path):
     """
-    Takes a csvManager and creates a dictionary with an index for each of the unique labels
+    Creates a dictionary with an index for each of the unique labels
 
-    :param csvM: (csvManager)
+    :param dir_path: (string)
     :return: (dictionary)
     """
-    labels = [label.replace(".csv", "") for label in csvM.files]
+    labels = [filename.replace(".csv", "") for filename in os.listdir(dir_path)
+              if filename != "all_doodles.csv" and filename.find(".csv") != -1]
     label_to_class = {unique_label: i for i, unique_label in enumerate(labels)}
     return label_to_class
 
@@ -172,18 +135,18 @@ def class_to_one_hot(file_batch, label_to_class, class_eye):
     return class_eye[labels]
 
 
-def get_batch(csvM, label_to_class, class_eye, batch_size):
+def get_batch(csv_generator, label_to_class, class_eye):
     """
     Gets X and Y matrices of a specified batch size
 
-    :param csvM: (csvManager)
+    :param csv_generator: (generator) generator created by csv_generator function
     :param label_to_class: (dictionary) rosetta stone, labels to number
     :param class_eye: (np.array) identity matrix with length of num labels
     :param batch_size: (int)
     :return: (tuple of np.arrays)
     """
     X = []
-    file_batch = csvM.read_lines(batch_size)
+    file_batch = next(csv_generator)
     Y = class_to_one_hot(file_batch, label_to_class, class_eye)
     for file in file_batch:
         pixels = get_pixels(file["points"])
