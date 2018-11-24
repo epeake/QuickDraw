@@ -14,7 +14,7 @@ csvM.open_files()
 label_to_class = text_to_labels(csvM)
 class_eye = np.eye(len(label_to_class))
 n_outputs = len(label_to_class)
-learning_rate = 0.005
+learning_rate = 0.0003
 
 with tf.device("/gpu:1"):
     X = tf.placeholder("float", [None, height, width, 1])   # [None, height, width, channels]
@@ -80,10 +80,10 @@ with tf.device("/gpu:1"):
     n_correct = tf.reduce_sum(tf.cast(correct_prediction, "float"))
 
 
-n_epochs = 1
+n_epochs = 5
 init = tf.global_variables_initializer()
 saver = tf.train.Saver()
-config = tf.ConfigProto()
+config = tf.ConfigProto(device_count={'GPU': 1})
 config.allow_soft_placement = True
 with tf.Session(config=config) as sess:
     init.run()

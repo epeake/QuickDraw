@@ -190,4 +190,3 @@ def get_batch(csvM, label_to_class, class_eye, batch_size):
         X.append(draw_picture(pixels))
 
     return np.expand_dims(X, axis=3), Y   # add chanel dim
-
