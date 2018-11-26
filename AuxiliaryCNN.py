@@ -7,6 +7,7 @@ import os
 import numpy as np
 from subprocess import call, check_output
 from re import search
+import tensorflow as tf
 
 
 def process_lines(raw_lines):
@@ -42,12 +43,10 @@ def csv_generator(dir_path, batch_size, shuffle=True):
     """
     if shuffle:
         # shuffle all entries (this can take a while if large)
-        print("shuffling data")
-        call("sort -R -o " + dir_path + "train.csv" + " " + dir_path + "train.csv", shell=True)
-        print("shuffling complete")
-    num_entries = str(check_output("wc -l " + dir_path + "train.csv", shell=True))
+        call("sort -R -o " + dir_path + "all_doodles.csv" + " " + dir_path + "all_doodles.csv", shell=True)
+    num_entries = str(check_output("wc -l " + dir_path + "all_doodles.csv", shell=True))
     num_entries = int(search("[0-9]+", num_entries).group())
-    with open(dir_path + "train.csv") as file:
+    with open(dir_path + "all_doodles.csv") as file:
         for i in range(num_entries // batch_size):
             lines = []
             for _ in range(batch_size):
@@ -119,7 +118,7 @@ def text_to_labels(dir_path):
     :return: (dictionary)
     """
     labels = [filename.replace(".csv", "") for filename in os.listdir(dir_path)
-              if filename != "train.csv" and filename.find(".csv") != -1]
+              if filename != "all_doodles.csv" and filename.find(".csv") != -1]
     label_to_class = {unique_label: i for i, unique_label in enumerate(labels)}
     return label_to_class
 
@@ -155,3 +154,19 @@ def get_batch(csv_generator, label_to_class, class_eye):
         X.append(draw_picture(pixels))
 
     return np.expand_dims(X, axis=3), Y   # add chanel dim
+
+
+def conv_layer(input, chanels_in, chanels_out):
+    """
+    Convolutional layer for VGGNet16
+
+    :param input: input layer
+    :param chanels_in: (int)
+    :param chanels_out: (int)
+    :return: activation layer
+    """
+    W = tf.get_variable([3, 3, chanels_in, chanels_out], initializer=tf.contrib.layers.xavier_initializer())
+    b = tf.Variable(tf.zeros([chanels_out]))
+    conv = tf.nn.conv2d(input, W, strides=[1, 1, 1, 1], padding="SAME")
+    active = tf.nn.relu(conv + b)
+    return active
