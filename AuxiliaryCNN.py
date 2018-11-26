@@ -42,7 +42,9 @@ def csv_generator(dir_path, batch_size, shuffle=True):
     """
     if shuffle:
         # shuffle all entries (this can take a while if large)
+        print("shuffling data")
         call("sort -R -o " + dir_path + "all_doodles.csv" + " " + dir_path + "all_doodles.csv", shell=True)
+        print("shuffling complete")
     num_entries = str(check_output("wc -l " + dir_path + "all_doodles.csv", shell=True))
     num_entries = int(search("[0-9]+", num_entries).group())
     with open(dir_path + "all_doodles.csv") as file:
@@ -153,3 +155,4 @@ def get_batch(csv_generator, label_to_class, class_eye):
         X.append(draw_picture(pixels))
 
     return np.expand_dims(X, axis=3), Y   # add chanel dim
+    

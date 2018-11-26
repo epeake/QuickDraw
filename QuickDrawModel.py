@@ -9,11 +9,11 @@ from re import search
 
 # constants
 DIRPATH = "/data/scratch/epeake/Google-Doodles/"
-BATCH_SIZE = 100
+BATCH_SIZE = 30
 HEIGHT = 256
 WIDTH = 256
-N_EPOCHS = 1
-LEARNING_RATE = 0.00006
+N_EPOCHS = 5
+LEARNING_RATE = 0.0003
 
 label_to_class = text_to_labels(DIRPATH)
 class_eye = np.eye(len(label_to_class))
@@ -106,8 +106,6 @@ with tf.Session(config=config) as sess:
             train_accuracy = total_correct / (batch_number * BATCH_SIZE)
             print("Epoch:", epoch + 1, "Batch Number:", batch_number, "Train accuracy:", train_accuracy)
             batch_number += 1
-            if batch_number == 10:
-                break
 
     print("Total accuracy: ", total_correct / (csv_len * N_EPOCHS))
-    save_path = saver.save(sess, "./quick_draw_model")
+    save_path = saver.save(sess, "./qd_model/quick_draw_model")
