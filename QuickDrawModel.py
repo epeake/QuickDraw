@@ -5,7 +5,6 @@ from AuxiliaryCNN import csv_generator, text_to_labels, get_batch
 import numpy as np
 import tensorflow as tf
 from subprocess import check_output
-from re import search
 
 # constants
 DIRPATH = "/data/scratch/epeake/Google-Doodles/"
@@ -18,8 +17,8 @@ LEARNING_RATE = 0.0003
 label_to_class = text_to_labels(DIRPATH)
 class_eye = np.eye(len(label_to_class))
 n_outputs = len(label_to_class)
-csv_len = str(check_output("wc -l " + DIRPATH + "all_doodles.csv", shell=True))
-csv_len = int(search("[0-9]+", csv_len).group())
+csv_len = int(check_output('wc -l ' + DIRPATH + 'train.csv | grep -o "[0-9]\+"', shell=True))
+
 
 
 with tf.device("/gpu:1"):
@@ -88,7 +87,7 @@ with tf.device("/gpu:1"):
 
 init = tf.global_variables_initializer()
 saver = tf.train.Saver()
-config = tf.ConfigProto(device_count={'GPU': 1})
+config = tf.ConfigProto()
 config.allow_soft_placement = True
 with tf.Session(config=config) as sess:
     init.run()
