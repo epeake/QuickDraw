@@ -156,7 +156,7 @@ def get_batch(csv_generator, label_to_class, class_eye):
     return np.expand_dims(X, axis=3), Y   # add chanel dim
 
 
-def conv_layer(input, chanels_in, chanels_out):
+def conv_layer(input, chanels_in, name):
     """
     Convolutional layer for VGGNet16
 
@@ -165,8 +165,9 @@ def conv_layer(input, chanels_in, chanels_out):
     :param chanels_out: (int)
     :return: activation layer
     """
-    W = tf.get_variable([3, 3, chanels_in, chanels_out], initializer=tf.contrib.layers.xavier_initializer())
-    b = tf.Variable(tf.zeros([chanels_out]))
-    conv = tf.nn.conv2d(input, W, strides=[1, 1, 1, 1], padding="SAME")
-    active = tf.nn.relu(conv + b)
-    return active
+    with tf.name_scope(name):
+        W = tf.get_variable([3, 3, chanels_in, chanels_out], initializer=tf.contrib.layers.xavier_initializer(), name="W")
+        b = tf.Variable(tf.constant(0.1, shape=[chanels_out]), name="B")
+        conv = tf.nn.conv2d(input, W, strides=[1, 1, 1, 1], padding="SAME")
+        active = tf.nn.relu(conv + b)
+        return active
