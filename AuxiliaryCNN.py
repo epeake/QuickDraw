@@ -42,7 +42,9 @@ def csv_generator(dir_path, batch_size, shuffle=True):
     """
     if shuffle:
         # shuffle all entries (this can take a while if large)
+        print("Shuffling entries")
         call("sort -R -o " + dir_path + "train.csv" + " " + dir_path + "train.csv", shell=True)
+        print("Shuffling complete")
     num_entries = str(check_output("wc -l " + dir_path + "train.csv", shell=True))
     num_entries = int(search("[0-9]+", num_entries).group())
     with open(dir_path + "train.csv") as file:
