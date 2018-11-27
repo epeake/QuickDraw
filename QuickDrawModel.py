@@ -12,7 +12,7 @@ MODELPATH = "~/ML-Final-Code/qd_model/"
 BATCH_SIZE = 40
 HEIGHT = 256
 WIDTH = 256
-N_EPOCHS = 7
+N_EPOCHS = 4
 
 
 label_to_class = text_to_labels(DIRPATH)
@@ -147,7 +147,6 @@ def cnn_model(model_type, l_r):
     config = tf.ConfigProto()
     config.allow_soft_placement = True
     with tf.Session(config=config) as sess:
-        tf.reset_default_graph()
         sess.run(tf.global_variables_initializer())
         saver = tf.train.Saver()
         writer = tf.summary.FileWriter(MODELPATH + "lr-" + str(l_r) + "-mt-" + model_type + "/", filename_suffix="board")
@@ -163,12 +162,12 @@ def cnn_model(model_type, l_r):
                     break
 
                 sess.run(train_step, feed_dict={X: X_batch, Y: Y_batch})
-                if batch_number % 500 == 0:
+                if batch_number % 100 == 0:
                     [train_accuracy, summ] = sess.run([accuracy, var_summary], feed_dict={X: X_batch, Y: Y_batch})
                     writer.add_summary(summ, batch_number)
                     print("Epoch:", epoch + 1, "Total Batch Number:", batch_number, "Train accuracy:", train_accuracy)
 
-                if batch_number % 5000 == 0:
+                if batch_number % 2500 == 0:
                     saver.save(sess, MODELPATH + "lr-" + str(l_r) + "-mt-" + model_type + "/", batch_number)
 
                 batch_number += 1
@@ -179,6 +178,7 @@ def cnn_model(model_type, l_r):
 def main():
     for l_r in [0.0003, 0.00003]:
         for m_type in ["VGG", "Alex"]:
+            tf.reset_default_graph()
             print("Starting", m_type, "with learning rate", str(l_r))
             cnn_model(m_type, l_r)
 
