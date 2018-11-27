@@ -5,14 +5,16 @@ from AuxiliaryCNN import csv_generator, text_to_labels, get_batch
 import numpy as np
 import tensorflow as tf
 from subprocess import check_output
+import time
 
 # constants
 DIRPATH = "/data/scratch/epeake/Google-Doodles/"
-MODELPATH = "~/ML-Final-Code/qd_model/"
+MODELPATH = "./qd_model/"
 BATCH_SIZE = 40
 HEIGHT = 256
 WIDTH = 256
-N_EPOCHS = 7
+N_EPOCHS = 4
+STARTTIME = time.time()
 
 
 label_to_class = text_to_labels(DIRPATH)
@@ -102,14 +104,14 @@ def cnn_model(model_type, l_r):
             conv_2_1 = tf.layers.conv2d(pool1, filters=256, kernel_size=5, strides=(1, 1),
                                         kernel_initializer=tf.contrib.layers.xavier_initializer(), padding="VALID",
                                         activation=tf.nn.relu, name="conv_2_1")
-            pool2 = tf.nn.max_pool(conv_2_1, ksize=[1, 3, 3, 1], strides=[1, 2, 2, 1], padding='Same', name="pool2")
+            pool2 = tf.nn.max_pool(conv_2_1, ksize=[1, 3, 3, 1], strides=[1, 2, 2, 1], padding='SAME', name="pool2")
 
             conv_3_1 = tf.layers.conv2d(pool2, filters=348, kernel_size=3, strides=(1, 1),
                                         kernel_initializer=tf.contrib.layers.xavier_initializer(), padding="SAME",
                                         activation=tf.nn.relu, name="conv_3_1")
             conv_3_2 = tf.layers.conv2d(conv_3_1, filters=348, kernel_size=3, strides=(1, 1),
-                             kernel_initializer=tf.contrib.layers.xavier_initializer(), padding="SAME",
-                             activation=tf.nn.relu, name="conv_3_2")
+                                        kernel_initializer=tf.contrib.layers.xavier_initializer(), padding="SAME",
+                                        activation=tf.nn.relu, name="conv_3_2")
             conv_3_3 = tf.layers.conv2d(conv_3_2, filters=256, kernel_size=3, strides=(1, 1),
                                         kernel_initializer=tf.contrib.layers.xavier_initializer(), padding="SAME",
                                         activation=tf.nn.relu, name="conv_3_3")
@@ -147,13 +149,11 @@ def cnn_model(model_type, l_r):
     config = tf.ConfigProto()
     config.allow_soft_placement = True
     with tf.Session(config=config) as sess:
-        tf.reset_default_graph()
         sess.run(tf.global_variables_initializer())
         saver = tf.train.Saver()
-        writer = tf.summary.FileWriter(MODELPATH + "lr-" + str(l_r) + "-mt-" + model_type + "/", filename_suffix="board")
+        writer = tf.summary.FileWriter(MODELPATH + "tboard", filename_suffix="lr-" + str(l_r) + "-mt-" + model_type)
         writer.add_graph(sess.graph)
         batch_number = 1
-        total_correct = 0
         for epoch in range(N_EPOCHS):
             csv_gen = csv_generator(DIRPATH, BATCH_SIZE)
             while True:
@@ -163,22 +163,28 @@ def cnn_model(model_type, l_r):
                     break
 
                 sess.run(train_step, feed_dict={X: X_batch, Y: Y_batch})
-                if batch_number % 500 == 0:
+                if batch_number % 100 == 0:
                     [train_accuracy, summ] = sess.run([accuracy, var_summary], feed_dict={X: X_batch, Y: Y_batch})
                     writer.add_summary(summ, batch_number)
                     print("Epoch:", epoch + 1, "Total Batch Number:", batch_number, "Train accuracy:", train_accuracy)
 
-                if batch_number % 5000 == 0:
-                    saver.save(sess, MODELPATH + "lr-" + str(l_r) + "-mt-" + model_type + "/", batch_number)
+                if batch_number % 2500 == 0:
+                    saver.save(sess, MODELPATH + "lr-" + str(l_r) + "-mt-" + model_type + "/cnnmodel", batch_number)
 
                 batch_number += 1
 
-        print("Total accuracy: ", total_correct / (csv_len * N_EPOCHS))
+            print("Epoch time:", (time.time() - STARTTIME) // 3600, "hr", ((time.time() - STARTTIME) % 3600) / 60, "min")
+
+        # final reports
+        summ = sess.run(var_summary, feed_dict={X: X_batch, Y: Y_batch})
+        writer.add_summary(summ, batch_number)
+        saver.save(sess, MODELPATH + "lr-" + str(l_r) + "-mt-" + model_type + "/cnnmodel", batch_number)
 
 
 def main():
     for l_r in [0.0003, 0.00003]:
-        for m_type in ["VGG", "Alex"]:
+        for m_type in ["Alex", "VGG"]:
+            tf.reset_default_graph()
             print("Starting", m_type, "with learning rate", str(l_r))
             cnn_model(m_type, l_r)
 
