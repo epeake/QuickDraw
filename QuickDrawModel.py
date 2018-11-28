@@ -182,8 +182,8 @@ def cnn_model(model_type, l_r):
 
 
 def main():
-    for l_r in [0.0003]:
-        for m_type in ["VGG"]:
+    for l_r in [0.0003, 0.00003]:
+        for m_type in ["VGG", "Alex"]:
             tf.reset_default_graph()
             print("Starting", m_type, "with learning rate", str(l_r))
             cnn_model(m_type, l_r)
