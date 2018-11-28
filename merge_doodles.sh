@@ -20,4 +20,3 @@ mv $f_path"trainaa" $f_path"train.csv"
 mv $f_path"trainab" $f_path"cross_validate.csv"
 
 rm $f_path"all_doodles.csv"
-

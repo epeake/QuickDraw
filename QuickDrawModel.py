@@ -4,7 +4,6 @@ A slightly modified VGG Network
 from AuxiliaryCNN import csv_generator, text_to_labels, get_batch
 import numpy as np
 import tensorflow as tf
-from subprocess import check_output
 import time
 
 # constants
@@ -17,10 +16,9 @@ N_EPOCHS = 2
 STARTTIME = time.time()
 
 
-label_to_class = text_to_labels(DIRPATH)
-class_eye = np.eye(len(label_to_class))
-n_outputs = len(label_to_class)
-csv_len = int(check_output('wc -l ' + DIRPATH + 'train.csv | grep -o "[0-9]\+"', shell=True))
+label_to_index = text_to_labels(DIRPATH)
+class_eye = np.eye(len(label_to_index))
+n_outputs = len(label_to_index)
 
 
 def cnn_model(model_type, l_r):
@@ -158,7 +156,7 @@ def cnn_model(model_type, l_r):
             csv_gen = csv_generator(DIRPATH, BATCH_SIZE)
             while True:
                 try:
-                    X_batch, Y_batch = get_batch(csv_gen, label_to_class, class_eye)
+                    X_batch, Y_batch = get_batch(csv_gen, label_to_index, class_eye)
                 except StopIteration:
                     break
 

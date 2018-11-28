@@ -6,7 +6,6 @@ Functions are optimized to handle massive datasets without using too much RAM.
 import os
 import numpy as np
 from subprocess import call, check_output
-from re import search
 
 
 def process_lines(raw_lines):
@@ -45,17 +44,16 @@ def csv_generator(dir_path, batch_size, shuffle=True):
         print("Shuffling entries")
         call("sort -R -o " + dir_path + "train.csv" + " " + dir_path + "train.csv", shell=True)
         print("Shuffling complete")
-    num_entries = str(check_output("wc -l " + dir_path + "train.csv", shell=True))
-    num_entries = int(search("[0-9]+", num_entries).group())
+    csv_len = int(check_output('wc -l ' + dir_path + 'train.csv | grep -o "[0-9]\+"', shell=True))
     with open(dir_path + "train.csv") as file:
-        for i in range(num_entries // batch_size):
+        for i in range(csv_len // batch_size):
             lines = []
             for _ in range(batch_size):
                 lines.append(file.readline())
             yield process_lines(lines)
 
         lines = []
-        for _ in range(num_entries % batch_size):
+        for _ in range(csv_len % batch_size):
             lines.append(file.readline())
         yield process_lines(lines)
 
@@ -120,36 +118,36 @@ def text_to_labels(dir_path):
     """
     labels = [filename.replace(".csv", "") for filename in os.listdir(dir_path)
               if filename != "cross_validate.csv" and filename != "train.csv" and filename.find(".csv") != -1]
-    label_to_class = {unique_label: i for i, unique_label in enumerate(labels)}
-    return label_to_class
+    label_to_index = {unique_label: i for i, unique_label in enumerate(labels)}
+    return label_to_index
 
 
-def class_to_one_hot(file_batch, label_to_class, class_eye):
+def class_to_one_hot(file_batch, label_to_index, class_eye):
     """
     Creates our Y matrix with one-hot encoding
 
     :param file_batch: (list of dictionaries) batch of pictures
-    :param label_to_class: (dictionary) rosetta stone, labels to number
+    :param label_to_index: (dictionary) rosetta stone, labels to number
     :param class_eye: (np.array) identity matrix with length of num labels
     :return: (np.array) Y matrix with one-hot encoding
     """
-    labels = np.array([label_to_class[file["label"]] for file in file_batch])
+    labels = np.array([label_to_index[file["label"]] for file in file_batch])
     return class_eye[labels]
 
 
-def get_batch(csv_generator, label_to_class, class_eye):
+def get_batch(csv_generator, label_to_index, class_eye):
     """
     Gets X and Y matrices of a specified batch size
 
     :param csv_generator: (generator) generator created by csv_generator function
-    :param label_to_class: (dictionary) rosetta stone, labels to number
+    :param label_to_index: (dictionary) rosetta stone, labels to number
     :param class_eye: (np.array) identity matrix with length of num labels
     :param batch_size: (int)
     :return: (tuple of np.arrays)
     """
     X = []
     file_batch = next(csv_generator)
-    Y = class_to_one_hot(file_batch, label_to_class, class_eye)
+    Y = class_to_one_hot(file_batch, label_to_index, class_eye)
     for file in file_batch:
         pixels = get_pixels(file["points"])
         X.append(draw_picture(pixels))
