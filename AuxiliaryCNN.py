@@ -117,7 +117,9 @@ def text_to_labels(dir_path):
     :return: (dictionary)
     """
     labels = [filename.replace(".csv", "") for filename in os.listdir(dir_path)
-              if filename != "cross_validate.csv" and filename != "train.csv" and filename.find(".csv") != -1]
+              if filename != "cross_validate.csv" and filename != "train.csv"
+              and filename != "train_all.csv" and filename != "test.csv"
+              and filename.find(".csv") != -1]
     label_to_index = {unique_label: i for i, unique_label in enumerate(labels)}
     return label_to_index
 
