@@ -9,11 +9,7 @@
 #SBATCH --mem-per-cpu=20GB
 #SBATCH --gres=gpu:titanxp:1
 
-py_env=$"/home/epeake/venv/mainenv/bin/python3"
-
-chmod +x merge_doodles.sh
-./merge_doodles.sh
-
 module load cuda
 
-CUDA_VISIBLE_DEVICES=0 py_env -u QuickDrawModel.py -W
+export CUDA_DEVICE_ORDER=PCI_BUS_ID
+CUDA_VISIBLE_DEVICES=2 /home/epeake/venv/mainenv/bin/python3 -u QuickDrawModel.py -W

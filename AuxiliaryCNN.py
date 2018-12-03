@@ -30,22 +30,23 @@ def process_lines(raw_lines):
     return lines
 
 
-def csv_generator(dir_path, batch_size, shuffle=True):
+def csv_generator(dir_path, batch_size, file_name="train.csv", shuffle=True):
     """
     Shuffles a csv file, then yields batches of its entries
 
     :param dir_path: (string)
     :param batch_size: (int)
     :param shuffle: (bool) should we shuffle our csv before taking batches?
+    :param file_name: (string) file to be generated from
     :yield: (list of dictionaries) our batch's entries
     """
     if shuffle:
         # shuffle all entries (this can take a while if large)
         print("Shuffling entries")
-        call("sort -R -o " + dir_path + "train.csv" + " " + dir_path + "train.csv", shell=True)
+        call("sort -R -o " + dir_path + file_name + " " + dir_path + file_name, shell=True)
         print("Shuffling complete")
-    csv_len = int(check_output('wc -l ' + dir_path + 'train.csv | grep -o "[0-9]\+"', shell=True))
-    with open(dir_path + "train.csv") as file:
+    csv_len = int(check_output('wc -l ' + dir_path + file_name + ' | grep -o "[0-9]\+"', shell=True))
+    with open(dir_path + file_name) as file:
         for i in range(csv_len // batch_size):
             lines = []
             for _ in range(batch_size):
@@ -144,7 +145,6 @@ def get_batch(csv_generator, label_to_index, class_eye):
     :param csv_generator: (generator) generator created by csv_generator function
     :param label_to_index: (dictionary) rosetta stone, labels to number
     :param class_eye: (np.array) identity matrix with length of num labels
-    :param batch_size: (int)
     :return: (tuple of np.arrays)
     """
     X = []
