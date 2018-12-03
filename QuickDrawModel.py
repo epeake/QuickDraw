@@ -214,8 +214,12 @@ def cnn_model(model_type, l_r):
 
         with tf.name_scope("accuracy"):
             correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(Y, 1))
-            accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"), name="accuracy")
+            accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"), name="accuracy_op")
             tf.summary.scalar("Accuracy", accuracy)
+
+        with tf.name_scope("num_right"):
+            correct_prediction_2 = tf.equal(tf.argmax(logits, 1), tf.argmax(Y, 1))
+            correct = tf.reduce_sum(tf.cast(correct_prediction_2, "float"), name="correct")
 
         var_summary = tf.summary.merge_all()
 
@@ -226,7 +230,7 @@ def cnn_model(model_type, l_r):
         saver = tf.train.Saver()
         writer = tf.summary.FileWriter(MODEL_PATH + "tboard", filename_suffix="lr-" + str(l_r) + "-mt-" + model_type)
         writer.add_graph(sess.graph)
-        batch_number = 1
+        total_batch_number = 1
         for epoch in range(N_EPOCHS):
             csv_gen = csv_generator(DIR_PATH, BATCH_SIZE)
             while True:
@@ -236,27 +240,98 @@ def cnn_model(model_type, l_r):
                     break
 
                 sess.run(train_step, feed_dict={X: X_batch, Y: Y_batch})
-                if batch_number % 100 == 0:
+                if total_batch_number % 100 == 0:
                     [train_accuracy, summ] = sess.run([accuracy, var_summary], feed_dict={X: X_batch, Y: Y_batch})
-                    writer.add_summary(summ, batch_number)
-                    print("Epoch:", epoch + 1, "Total Batch Number:", batch_number, "Train accuracy:", train_accuracy)
+                    writer.add_summary(summ, total_batch_number)
+                    print("Epoch:", epoch + 1, "Total Batch Number:", total_batch_number, "Train accuracy:", train_accuracy)
 
-                if batch_number % 2500 == 0:
-                    saver.save(sess, MODEL_PATH + "lr-" + str(l_r) + "-mt-" + model_type + "/cnnmodel", batch_number)
+                if total_batch_number % 2500 == 0:
+                    saver.save(sess, MODEL_PATH + "lr-" + str(l_r) + "-mt-" + model_type + "/cnnmodel", total_batch_number)
 
-                batch_number += 1
+                total_batch_number += 1
 
             print("Epoch time:", (time.time() - START_TIME) // 3600, "hr", ((time.time() - START_TIME) % 3600) / 60, "min")
 
         # final reports
         summ = sess.run(var_summary, feed_dict={X: X_batch, Y: Y_batch})
-        writer.add_summary(summ, batch_number)
-        saver.save(sess, MODEL_PATH + "lr-" + str(l_r) + "-mt-" + model_type + "/cnnmodel", batch_number)
+        writer.add_summary(summ, total_batch_number)
+        saver.save(sess, MODEL_PATH + "lr-" + str(l_r) + "-mt-" + model_type + "/cnnmodel", total_batch_number)
+
+        # check CV accuracy
+        print("\n\n\n" + model_type + " CV Accuracy \n\n\n\n")
+        csv_gen = csv_generator(DIR_PATH, 1, file_name="cross_validate.csv", shuffle=False)
+        test_correct = 0
+        batch_number = 1
+        while True:
+            try:
+                X_batch, Y_batch = get_batch(csv_gen, label_to_index, class_eye)
+                test_correct += sess.run(correct, feed_dict={X: X_batch, Y: Y_batch})
+                if batch_number % 1000 == 0:
+                    print("Batch number:", batch_number, "CV batch accuracy:", test_correct / batch_number)
+                    break
+
+            except StopIteration:
+                test_accuracy = test_correct / batch_number
+                break
+
+            except IndexError:
+                test_accuracy = test_correct / batch_number
+                break
+
+            batch_number += 1
+
+        print(model_type, "CV Accuracy =", test_accuracy)
+
+        if model_type == "AlexDeep":
+            print("\n\n\n AlexDeep CV train \n\n\n\n")
+            for epoch in range(N_EPOCHS):
+                csv_gen = csv_generator(DIR_PATH, BATCH_SIZE, file_name="cross_validate.csv")
+                while True:
+                    try:
+                        X_batch, Y_batch = get_batch(csv_gen, label_to_index, class_eye)
+                    except StopIteration:
+                        break
+
+                    sess.run(train_step, feed_dict={X: X_batch, Y: Y_batch})
+                    if total_batch_number % 100 == 0:
+                        [train_accuracy, summ] = sess.run([accuracy, var_summary], feed_dict={X: X_batch, Y: Y_batch})
+                        writer.add_summary(summ, total_batch_number)
+                        print("Epoch CV:", epoch + 1, "Total Batch Number:", total_batch_number, "Train accuracy:",
+                              train_accuracy)
+
+                    total_batch_number += 1
+
+                print("Epoch cv time:", (time.time() - START_TIME) // 3600, "hr", ((time.time() - START_TIME) % 3600) / 60,
+                      "min")
+
+            # check test accuracy
+            print("\n\n\n Test Accuracy \n\n\n\n")
+            csv_gen = csv_generator(DIR_PATH, 1, file_name="test.csv", shuffle=False)
+            test_correct = 0
+            batch_number = 1
+            while True:
+                try:
+                    X_batch, Y_batch = get_batch(csv_gen, label_to_index, class_eye)
+                    test_correct += sess.run(correct, feed_dict={X: X_batch, Y: Y_batch})
+                    if batch_number % 1000 == 0:
+                        print("batch number:", batch_number, "test accuracy:", test_correct / batch_number)
+
+                except StopIteration:
+                    test_accuracy = test_correct / batch_number
+                    break
+
+                except IndexError:
+                    test_accuracy = test_correct / batch_number
+                    break
+
+                batch_number += 1
+
+            print(model_type, "Test Accuracy =", test_accuracy)
 
 
 def main():
     for l_r in [0.0003]:
-        for m_type in ["Alex", "AlexDeep", "AlexDeep2"]:
+        for m_type in ["AlexDeep", "Alex", "AlexDeep2"]:
             tf.reset_default_graph()
             print("Starting", m_type, "with learning rate", str(l_r))
             cnn_model(m_type, l_r)

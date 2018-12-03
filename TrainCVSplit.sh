@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-f_path=$"/data/scratch/epeake/Google-Doodles/"
-python_env=$"/home/epeake/venv/mainenv/bin/python3"
+#f_path=$"/data/scratch/epeake/Google-Doodles/"
+#python_env=$"/home/epeake/venv/mainenv/bin/python3"
+
+
+f_path=$"/Users/epeake/Desktop/Google-Doodles/"
+python_env=$"python3"
 
 if [ $(find $f_path -name "train.csv") ]
   then

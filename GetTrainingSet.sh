@@ -3,7 +3,9 @@
 f_path=$"/data/scratch/epeake/Google-Doodles/"
 python_env=$"/home/epeake/venv/mainenv/bin/python3"
 
-$python_env merge_doodles.py $f_path
+$python_env MergeDoodles.py $f_path
+
+sort -R -o $f_path"all_doodles.csv" $f_path"all_doodles.csv"
 
 # split train, and test 80% / 20%
 n_lines=$(wc -l $f_path"all_doodles.csv" | grep -o "[0-9]\+")

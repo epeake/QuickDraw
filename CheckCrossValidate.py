@@ -23,16 +23,56 @@ def main(file_to_test):
 
     label_to_index = text_to_labels(DATA_DIR)
     class_eye = np.eye(len(label_to_index))
+    n_outputs = len(label_to_index)
     BATCH_SIZE = 1
+    HEIGHT = 256
+    WIDTH = 256
 
     for i in range(len(savers)):
+        tf.reset_default_graph()
         with tf.Session() as sess:
             savers[i].restore(sess, tf.train.latest_checkpoint(DIR_PATHS[i]))
             graph = tf.get_default_graph()
 
-            X = graph.get_tensor_by_name("X:0")
-            Y = graph.get_tensor_by_name("Y:0")
-            accuracy = graph.get_tensor_by_name("accuracy:0")
+            X = tf.placeholder("float", [None, HEIGHT, WIDTH, 1], name="X")
+            Y = tf.placeholder("float", [None, n_outputs], name="Y")
+
+            conv_1_1 = tf.layers.conv2d(X, filters=96, kernel_size=11, strides=(4, 4),
+                                        kernel_initializer=tf.contrib.layers.xavier_initializer(), padding="VALID",
+                                        activation=tf.nn.relu, name="conv_1_1")
+            pool1 = tf.nn.max_pool(conv_1_1, ksize=[1, 3, 3, 1], strides=[1, 2, 2, 1], padding='SAME', name="pool1")
+
+            conv_2_1 = tf.layers.conv2d(pool1, filters=256, kernel_size=5, strides=(1, 1),
+                                        kernel_initializer=tf.contrib.layers.xavier_initializer(), padding="VALID",
+                                        activation=tf.nn.relu, name="conv_2_1")
+            pool2 = tf.nn.max_pool(conv_2_1, ksize=[1, 3, 3, 1], strides=[1, 2, 2, 1], padding='SAME', name="pool2")
+
+            conv_3_1 = tf.layers.conv2d(pool2, filters=348, kernel_size=3, strides=(1, 1),
+                                        kernel_initializer=tf.contrib.layers.xavier_initializer(), padding="SAME",
+                                        activation=tf.nn.relu, name="conv_3_1")
+            conv_3_2 = tf.layers.conv2d(conv_3_1, filters=348, kernel_size=3, strides=(1, 1),
+                                        kernel_initializer=tf.contrib.layers.xavier_initializer(), padding="SAME",
+                                        activation=tf.nn.relu, name="conv_3_2")
+            conv_3_3 = tf.layers.conv2d(conv_3_2, filters=256, kernel_size=3, strides=(1, 1),
+                                        kernel_initializer=tf.contrib.layers.xavier_initializer(), padding="SAME",
+                                        activation=tf.nn.relu, name="conv_3_3")
+            pool3 = tf.nn.max_pool(conv_3_3, ksize=[1, 3, 3, 1], strides=[1, 2, 2, 1], padding='SAME', name="pool3")
+
+            pre_fully_connected = tf.contrib.layers.flatten(pool3, scope="flattened")
+
+            fully_connected_1 = tf.layers.dense(pre_fully_connected, 4010,
+                                                kernel_initializer=tf.contrib.layers.xavier_initializer(),
+                                                activation=tf.nn.relu, name="fc1")
+
+            fully_connected_2 = tf.layers.dense(fully_connected_1, 4010,
+                                                kernel_initializer=tf.contrib.layers.xavier_initializer(),
+                                                activation=tf.nn.relu, name="fc2")
+
+            logits = tf.layers.dense(fully_connected_2, n_outputs, activation=tf.nn.relu, name="logits")
+
+            correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(Y, 1))
+            accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"), name="accuracy_op")
+
             csv_gen = csv_generator(DATA_DIR, BATCH_SIZE, file_name=file_to_test, shuffle=False)
             test_accuracy = 0
             batch_number = 1
