@@ -13,7 +13,7 @@ MODEL_PATH = "./qd_model/"
 BATCH_SIZE = 40
 HEIGHT = 256
 WIDTH = 256
-N_EPOCHS = 2
+N_EPOCHS = 4
 START_TIME = time.time()
 
 
@@ -268,22 +268,19 @@ def cnn_model(model_type, l_r):
                 test_correct += sess.run(correct, feed_dict={X: X_batch, Y: Y_batch})
                 if batch_number % 1000 == 0:
                     print("Batch number:", batch_number, "CV batch accuracy:", test_correct / batch_number)
-                    break
 
             except StopIteration:
-                test_accuracy = test_correct / batch_number
                 break
 
             except IndexError:
-                test_accuracy = test_correct / batch_number
                 break
 
             batch_number += 1
 
-        print(model_type, "CV Accuracy =", test_accuracy)
+        print(model_type, "CV Accuracy =", test_correct / batch_number)
 
-        if model_type == "AlexDeep":
-            print("\n\n\n AlexDeep CV train \n\n\n\n")
+        if model_type == "AlexDeep2":
+            print("\n\n\n AlexDeep2 CV train \n\n\n\n")
             for epoch in range(N_EPOCHS):
                 csv_gen = csv_generator(DIR_PATH, BATCH_SIZE, file_name="cross_validate.csv")
                 while True:
@@ -317,21 +314,19 @@ def cnn_model(model_type, l_r):
                         print("batch number:", batch_number, "test accuracy:", test_correct / batch_number)
 
                 except StopIteration:
-                    test_accuracy = test_correct / batch_number
                     break
 
                 except IndexError:
-                    test_accuracy = test_correct / batch_number
                     break
 
                 batch_number += 1
 
-            print(model_type, "Test Accuracy =", test_accuracy)
+            print(model_type, "Test Accuracy =", test_correct / batch_number)
 
 
 def main():
-    for l_r in [0.0003]:
-        for m_type in ["AlexDeep", "Alex", "AlexDeep2"]:
+    for l_r in [0.00009]:
+        for m_type in ["AlexDeep2", "AlexDeep"]:
             tf.reset_default_graph()
             print("Starting", m_type, "with learning rate", str(l_r))
             cnn_model(m_type, l_r)

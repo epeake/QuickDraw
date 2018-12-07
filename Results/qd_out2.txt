@@ -1,0 +1,995 @@
+Starting AlexDeep2 with learning rate 9e-05
+Shuffling entries
+Shuffling complete
+Epoch: 1 Total Batch Number: 100 Train accuracy: 0.625
+Epoch: 1 Total Batch Number: 200 Train accuracy: 0.675
+Epoch: 1 Total Batch Number: 300 Train accuracy: 0.625
+Epoch: 1 Total Batch Number: 400 Train accuracy: 0.75
+Epoch: 1 Total Batch Number: 500 Train accuracy: 0.775
+Epoch: 1 Total Batch Number: 600 Train accuracy: 0.75
+Epoch: 1 Total Batch Number: 700 Train accuracy: 0.7
+Epoch: 1 Total Batch Number: 800 Train accuracy: 0.675
+Epoch: 1 Total Batch Number: 900 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 1000 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 1100 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 1200 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 1300 Train accuracy: 0.775
+Epoch: 1 Total Batch Number: 1400 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 1500 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 1600 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 1700 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 1800 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 1900 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 2000 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 2100 Train accuracy: 0.875
+Epoch: 1 Total Batch Number: 2200 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 2300 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 2400 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 2500 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 2600 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 2700 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 2800 Train accuracy: 0.875
+Epoch: 1 Total Batch Number: 2900 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 3000 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 3100 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 3200 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 3300 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 3400 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 3500 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 3600 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 3700 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 3800 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 3900 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 4000 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 4100 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 4200 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 4300 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 4400 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 4500 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 4600 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 4700 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 4800 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 4900 Train accuracy: 0.875
+Epoch: 1 Total Batch Number: 5000 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 5100 Train accuracy: 0.875
+Epoch: 1 Total Batch Number: 5200 Train accuracy: 0.85
+Epoch: 1 Total Batch Number: 5300 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 5400 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 5500 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 5600 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 5700 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 5800 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 5900 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 6000 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 6100 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 6200 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 6300 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 6400 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 6500 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 6600 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 6700 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 6800 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 6900 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 7000 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 7100 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 7200 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 7300 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 7400 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 7500 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 7600 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 7700 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 7800 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 7900 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 8000 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 8100 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 8200 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 8300 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 8400 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 8500 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 8600 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 8700 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 8800 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 8900 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 9000 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 9100 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 9200 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 9300 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 9400 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 9500 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 9600 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 9700 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 9800 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 9900 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 10000 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 10100 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 10200 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 10300 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 10400 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 10500 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 10600 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 10700 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 10800 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 10900 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 11000 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 11100 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 11200 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 11300 Train accuracy: 0.9
+Epoch: 1 Total Batch Number: 11400 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 11500 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 11600 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 11700 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 11800 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 11900 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 12000 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 12100 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 12200 Train accuracy: 0.825
+Epoch: 1 Total Batch Number: 12300 Train accuracy: 0.975
+Epoch: 1 Total Batch Number: 12400 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 12500 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 12600 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 12700 Train accuracy: 1.0
+Epoch: 1 Total Batch Number: 12800 Train accuracy: 0.95
+Epoch: 1 Total Batch Number: 12900 Train accuracy: 0.925
+Epoch: 1 Total Batch Number: 13000 Train accuracy: 0.975
+Epoch time: 0.0 hr 35.43331089019775 min
+Shuffling entries
+Shuffling complete
+Epoch: 2 Total Batch Number: 13100 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 13200 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 13300 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 13400 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 13500 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 13600 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 13700 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 13800 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 13900 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 14000 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 14100 Train accuracy: 0.9
+Epoch: 2 Total Batch Number: 14200 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 14300 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 14400 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 14500 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 14600 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 14700 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 14800 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 14900 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 15000 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 15100 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 15200 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 15300 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 15400 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 15500 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 15600 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 15700 Train accuracy: 0.875
+Epoch: 2 Total Batch Number: 15800 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 15900 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 16000 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 16100 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 16200 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 16300 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 16400 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 16500 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 16600 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 16700 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 16800 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 16900 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 17000 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 17100 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 17200 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 17300 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 17400 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 17500 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 17600 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 17700 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 17800 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 17900 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 18000 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 18100 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 18200 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 18300 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 18400 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 18500 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 18600 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 18700 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 18800 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 18900 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 19000 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 19100 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 19200 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 19300 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 19400 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 19500 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 19600 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 19700 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 19800 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 19900 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 20000 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 20100 Train accuracy: 0.875
+Epoch: 2 Total Batch Number: 20200 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 20300 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 20400 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 20500 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 20600 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 20700 Train accuracy: 0.875
+Epoch: 2 Total Batch Number: 20800 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 20900 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 21000 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 21100 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 21200 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 21300 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 21400 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 21500 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 21600 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 21700 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 21800 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 21900 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 22000 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 22100 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 22200 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 22300 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 22400 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 22500 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 22600 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 22700 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 22800 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 22900 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 23000 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 23100 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 23200 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 23300 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 23400 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 23500 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 23600 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 23700 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 23800 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 23900 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 24000 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 24100 Train accuracy: 0.925
+Epoch: 2 Total Batch Number: 24200 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 24300 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 24400 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 24500 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 24600 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 24700 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 24800 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 24900 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 25000 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 25100 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 25200 Train accuracy: 1.0
+Epoch: 2 Total Batch Number: 25300 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 25400 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 25500 Train accuracy: 0.9
+Epoch: 2 Total Batch Number: 25600 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 25700 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 25800 Train accuracy: 0.975
+Epoch: 2 Total Batch Number: 25900 Train accuracy: 0.95
+Epoch: 2 Total Batch Number: 26000 Train accuracy: 0.975
+Epoch time: 1.0 hr 10.011261582374573 min
+Shuffling entries
+Shuffling complete
+Epoch: 3 Total Batch Number: 26100 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 26200 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 26300 Train accuracy: 0.925
+Epoch: 3 Total Batch Number: 26400 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 26500 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 26600 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 26700 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 26800 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 26900 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 27000 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 27100 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 27200 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 27300 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 27400 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 27500 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 27600 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 27700 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 27800 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 27900 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 28000 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 28100 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 28200 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 28300 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 28400 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 28500 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 28600 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 28700 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 28800 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 28900 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 29000 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 29100 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 29200 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 29300 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 29400 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 29500 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 29600 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 29700 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 29800 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 29900 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 30000 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 30100 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 30200 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 30300 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 30400 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 30500 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 30600 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 30700 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 30800 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 30900 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 31000 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 31100 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 31200 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 31300 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 31400 Train accuracy: 0.925
+Epoch: 3 Total Batch Number: 31500 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 31600 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 31700 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 31800 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 31900 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 32000 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 32100 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 32200 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 32300 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 32400 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 32500 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 32600 Train accuracy: 0.9
+Epoch: 3 Total Batch Number: 32700 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 32800 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 32900 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 33000 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 33100 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 33200 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 33300 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 33400 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 33500 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 33600 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 33700 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 33800 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 33900 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 34000 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 34100 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 34200 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 34300 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 34400 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 34500 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 34600 Train accuracy: 0.925
+Epoch: 3 Total Batch Number: 34700 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 34800 Train accuracy: 0.925
+Epoch: 3 Total Batch Number: 34900 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 35000 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 35100 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 35200 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 35300 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 35400 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 35500 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 35600 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 35700 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 35800 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 35900 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 36000 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 36100 Train accuracy: 0.925
+Epoch: 3 Total Batch Number: 36200 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 36300 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 36400 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 36500 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 36600 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 36700 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 36800 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 36900 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 37000 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 37100 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 37200 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 37300 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 37400 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 37500 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 37600 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 37700 Train accuracy: 0.925
+Epoch: 3 Total Batch Number: 37800 Train accuracy: 0.925
+Epoch: 3 Total Batch Number: 37900 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 38000 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 38100 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 38200 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 38300 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 38400 Train accuracy: 0.975
+Epoch: 3 Total Batch Number: 38500 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 38600 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 38700 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 38800 Train accuracy: 1.0
+Epoch: 3 Total Batch Number: 38900 Train accuracy: 0.95
+Epoch: 3 Total Batch Number: 39000 Train accuracy: 1.0
+Epoch time: 1.0 hr 41.917563728491466 min
+Shuffling entries
+Shuffling complete
+Epoch: 4 Total Batch Number: 39100 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 39200 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 39300 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 39400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 39500 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 39600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 39700 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 39800 Train accuracy: 0.95
+Epoch: 4 Total Batch Number: 39900 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 40000 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 40100 Train accuracy: 0.95
+Epoch: 4 Total Batch Number: 40200 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 40300 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 40400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 40500 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 40600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 40700 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 40800 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 40900 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 41000 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 41100 Train accuracy: 0.95
+Epoch: 4 Total Batch Number: 41200 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 41300 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 41400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 41500 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 41600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 41700 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 41800 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 41900 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 42000 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 42100 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 42200 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 42300 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 42400 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 42500 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 42600 Train accuracy: 0.95
+Epoch: 4 Total Batch Number: 42700 Train accuracy: 0.95
+Epoch: 4 Total Batch Number: 42800 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 42900 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 43000 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 43100 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 43200 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 43300 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 43400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 43500 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 43600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 43700 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 43800 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 43900 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 44000 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 44100 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 44200 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 44300 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 44400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 44500 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 44600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 44700 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 44800 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 44900 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 45000 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 45100 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 45200 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 45300 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 45400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 45500 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 45600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 45700 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 45800 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 45900 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 46000 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 46100 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 46200 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 46300 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 46400 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 46500 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 46600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 46700 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 46800 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 46900 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 47000 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 47100 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 47200 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 47300 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 47400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 47500 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 47600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 47700 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 47800 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 47900 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 48000 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 48100 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 48200 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 48300 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 48400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 48500 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 48600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 48700 Train accuracy: 0.85
+Epoch: 4 Total Batch Number: 48800 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 48900 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 49000 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 49100 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 49200 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 49300 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 49400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 49500 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 49600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 49700 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 49800 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 49900 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 50000 Train accuracy: 0.95
+Epoch: 4 Total Batch Number: 50100 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 50200 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 50300 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 50400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 50500 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 50600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 50700 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 50800 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 50900 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 51000 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 51100 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 51200 Train accuracy: 0.925
+Epoch: 4 Total Batch Number: 51300 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 51400 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 51500 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 51600 Train accuracy: 1.0
+Epoch: 4 Total Batch Number: 51700 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 51800 Train accuracy: 0.975
+Epoch: 4 Total Batch Number: 51900 Train accuracy: 0.95
+Epoch: 4 Total Batch Number: 52000 Train accuracy: 1.0
+Epoch time: 2.0 hr 16.82863179445267 min
+
+
+
+AlexDeep2 CV Accuracy 
+
+
+
+
+Batch number: 1000 CV batch accuracy: 0.953
+Batch number: 2000 CV batch accuracy: 0.9555
+Batch number: 3000 CV batch accuracy: 0.9576666666666667
+Batch number: 4000 CV batch accuracy: 0.96075
+Batch number: 5000 CV batch accuracy: 0.9624
+Batch number: 6000 CV batch accuracy: 0.9623333333333334
+Batch number: 7000 CV batch accuracy: 0.961
+Batch number: 8000 CV batch accuracy: 0.960125
+Batch number: 9000 CV batch accuracy: 0.9613333333333334
+Batch number: 10000 CV batch accuracy: 0.9615
+Batch number: 11000 CV batch accuracy: 0.9613636363636363
+Batch number: 12000 CV batch accuracy: 0.9610833333333333
+Batch number: 13000 CV batch accuracy: 0.9606923076923077
+Batch number: 14000 CV batch accuracy: 0.9606428571428571
+Batch number: 15000 CV batch accuracy: 0.9608666666666666
+Batch number: 16000 CV batch accuracy: 0.961125
+Batch number: 17000 CV batch accuracy: 0.9611764705882353
+Batch number: 18000 CV batch accuracy: 0.9608888888888889
+Batch number: 19000 CV batch accuracy: 0.9609473684210527
+Batch number: 20000 CV batch accuracy: 0.9609
+Batch number: 21000 CV batch accuracy: 0.9605238095238096
+Batch number: 22000 CV batch accuracy: 0.9602727272727273
+Batch number: 23000 CV batch accuracy: 0.9601304347826087
+Batch number: 24000 CV batch accuracy: 0.9602916666666667
+Batch number: 25000 CV batch accuracy: 0.96048
+Batch number: 26000 CV batch accuracy: 0.9607692307692308
+Batch number: 27000 CV batch accuracy: 0.9608148148148148
+Batch number: 28000 CV batch accuracy: 0.9606785714285714
+Batch number: 29000 CV batch accuracy: 0.9607931034482758
+Batch number: 30000 CV batch accuracy: 0.9606666666666667
+Batch number: 31000 CV batch accuracy: 0.9609354838709677
+Batch number: 32000 CV batch accuracy: 0.96096875
+Batch number: 33000 CV batch accuracy: 0.9606969696969697
+Batch number: 34000 CV batch accuracy: 0.9605
+Batch number: 35000 CV batch accuracy: 0.9603142857142857
+Batch number: 36000 CV batch accuracy: 0.9604444444444444
+Batch number: 37000 CV batch accuracy: 0.9605675675675676
+Batch number: 38000 CV batch accuracy: 0.9605526315789473
+Batch number: 39000 CV batch accuracy: 0.9605641025641025
+Batch number: 40000 CV batch accuracy: 0.96065
+Batch number: 41000 CV batch accuracy: 0.9607560975609756
+Batch number: 42000 CV batch accuracy: 0.9609285714285715
+Batch number: 43000 CV batch accuracy: 0.9610930232558139
+Batch number: 44000 CV batch accuracy: 0.9610454545454545
+Batch number: 45000 CV batch accuracy: 0.9609555555555556
+Batch number: 46000 CV batch accuracy: 0.9608043478260869
+Batch number: 47000 CV batch accuracy: 0.9607872340425532
+Batch number: 48000 CV batch accuracy: 0.9605
+Batch number: 49000 CV batch accuracy: 0.9606326530612245
+Batch number: 50000 CV batch accuracy: 0.96058
+Batch number: 51000 CV batch accuracy: 0.9604901960784313
+Batch number: 52000 CV batch accuracy: 0.9604615384615385
+Batch number: 53000 CV batch accuracy: 0.9604905660377359
+Batch number: 54000 CV batch accuracy: 0.9605185185185185
+Batch number: 55000 CV batch accuracy: 0.9606727272727272
+Batch number: 56000 CV batch accuracy: 0.960625
+Batch number: 57000 CV batch accuracy: 0.9604736842105264
+Batch number: 58000 CV batch accuracy: 0.9604827586206897
+Batch number: 59000 CV batch accuracy: 0.9606101694915254
+Batch number: 60000 CV batch accuracy: 0.9605166666666667
+Batch number: 61000 CV batch accuracy: 0.9604754098360656
+Batch number: 62000 CV batch accuracy: 0.9605645161290323
+Batch number: 63000 CV batch accuracy: 0.9603492063492064
+Batch number: 64000 CV batch accuracy: 0.960328125
+Batch number: 65000 CV batch accuracy: 0.9604
+Batch number: 66000 CV batch accuracy: 0.9604545454545454
+Batch number: 67000 CV batch accuracy: 0.9604776119402985
+Batch number: 68000 CV batch accuracy: 0.9604558823529412
+Batch number: 69000 CV batch accuracy: 0.9603333333333334
+Batch number: 70000 CV batch accuracy: 0.9604714285714285
+Batch number: 71000 CV batch accuracy: 0.9603098591549296
+Batch number: 72000 CV batch accuracy: 0.9604166666666667
+Batch number: 73000 CV batch accuracy: 0.9601232876712329
+Batch number: 74000 CV batch accuracy: 0.9600675675675676
+Batch number: 75000 CV batch accuracy: 0.96012
+Batch number: 76000 CV batch accuracy: 0.9600921052631579
+Batch number: 77000 CV batch accuracy: 0.960038961038961
+Batch number: 78000 CV batch accuracy: 0.9601025641025641
+Batch number: 79000 CV batch accuracy: 0.9600632911392405
+Batch number: 80000 CV batch accuracy: 0.9600875
+Batch number: 81000 CV batch accuracy: 0.9601604938271605
+Batch number: 82000 CV batch accuracy: 0.9601219512195122
+Batch number: 83000 CV batch accuracy: 0.9601325301204819
+Batch number: 84000 CV batch accuracy: 0.9601904761904761
+Batch number: 85000 CV batch accuracy: 0.9601647058823529
+Batch number: 86000 CV batch accuracy: 0.9601627906976744
+Batch number: 87000 CV batch accuracy: 0.9602528735632184
+Batch number: 88000 CV batch accuracy: 0.9602954545454545
+Batch number: 89000 CV batch accuracy: 0.9601910112359551
+Batch number: 90000 CV batch accuracy: 0.9601888888888889
+Batch number: 91000 CV batch accuracy: 0.9601648351648352
+Batch number: 92000 CV batch accuracy: 0.9601521739130435
+Batch number: 93000 CV batch accuracy: 0.9601935483870968
+Batch number: 94000 CV batch accuracy: 0.9602659574468085
+Batch number: 95000 CV batch accuracy: 0.9602631578947368
+Batch number: 96000 CV batch accuracy: 0.9603541666666666
+Batch number: 97000 CV batch accuracy: 0.9603092783505155
+Batch number: 98000 CV batch accuracy: 0.9604897959183674
+Batch number: 99000 CV batch accuracy: 0.9605151515151515
+Batch number: 100000 CV batch accuracy: 0.96052
+Batch number: 101000 CV batch accuracy: 0.9605346534653465
+Batch number: 102000 CV batch accuracy: 0.9604607843137255
+Batch number: 103000 CV batch accuracy: 0.960368932038835
+Batch number: 104000 CV batch accuracy: 0.9603942307692308
+Batch number: 105000 CV batch accuracy: 0.9605142857142858
+Batch number: 106000 CV batch accuracy: 0.9605377358490566
+Batch number: 107000 CV batch accuracy: 0.9605794392523365
+Batch number: 108000 CV batch accuracy: 0.9606481481481481
+Batch number: 109000 CV batch accuracy: 0.9606697247706422
+Batch number: 110000 CV batch accuracy: 0.9607272727272728
+Batch number: 111000 CV batch accuracy: 0.9607117117117117
+Batch number: 112000 CV batch accuracy: 0.9607410714285715
+Batch number: 113000 CV batch accuracy: 0.9606991150442478
+Batch number: 114000 CV batch accuracy: 0.9607105263157895
+Batch number: 115000 CV batch accuracy: 0.9607304347826087
+Batch number: 116000 CV batch accuracy: 0.9607586206896551
+Batch number: 117000 CV batch accuracy: 0.9607692307692308
+Batch number: 118000 CV batch accuracy: 0.9608220338983051
+Batch number: 119000 CV batch accuracy: 0.9607731092436975
+Batch number: 120000 CV batch accuracy: 0.9606916666666667
+Batch number: 121000 CV batch accuracy: 0.9606363636363636
+Batch number: 122000 CV batch accuracy: 0.9605327868852459
+Batch number: 123000 CV batch accuracy: 0.9605284552845529
+Batch number: 124000 CV batch accuracy: 0.960508064516129
+Batch number: 125000 CV batch accuracy: 0.960544
+Batch number: 126000 CV batch accuracy: 0.9606190476190476
+Batch number: 127000 CV batch accuracy: 0.9606220472440945
+Batch number: 128000 CV batch accuracy: 0.9605859375
+Batch number: 129000 CV batch accuracy: 0.9606201550387596
+Batch number: 130000 CV batch accuracy: 0.9605461538461538
+AlexDeep2 CV Accuracy = 0.9605283378411605
+
+
+
+ AlexDeep2 CV train 
+
+
+
+
+Shuffling entries
+Shuffling complete
+Epoch CV: 1 Total Batch Number: 52100 Train accuracy: 0.95
+Epoch CV: 1 Total Batch Number: 52200 Train accuracy: 0.95
+Epoch CV: 1 Total Batch Number: 52300 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 52400 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 52500 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 52600 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 52700 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 52800 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 52900 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 53000 Train accuracy: 0.95
+Epoch CV: 1 Total Batch Number: 53100 Train accuracy: 0.95
+Epoch CV: 1 Total Batch Number: 53200 Train accuracy: 0.925
+Epoch CV: 1 Total Batch Number: 53300 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 53400 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 53500 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 53600 Train accuracy: 0.95
+Epoch CV: 1 Total Batch Number: 53700 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 53800 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 53900 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 54000 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 54100 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 54200 Train accuracy: 0.95
+Epoch CV: 1 Total Batch Number: 54300 Train accuracy: 0.925
+Epoch CV: 1 Total Batch Number: 54400 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 54500 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 54600 Train accuracy: 0.925
+Epoch CV: 1 Total Batch Number: 54700 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 54800 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 54900 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 55000 Train accuracy: 1.0
+Epoch CV: 1 Total Batch Number: 55100 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 55200 Train accuracy: 0.975
+Epoch CV: 1 Total Batch Number: 55300 Train accuracy: 1.0
+Epoch cv time: 2.0 hr 35.62570449908574 min
+Shuffling entries
+Shuffling complete
+Epoch CV: 2 Total Batch Number: 55400 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 55500 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 55600 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 55700 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 55800 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 55900 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 56000 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 56100 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 56200 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 56300 Train accuracy: 0.925
+Epoch CV: 2 Total Batch Number: 56400 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 56500 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 56600 Train accuracy: 0.95
+Epoch CV: 2 Total Batch Number: 56700 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 56800 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 56900 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 57000 Train accuracy: 0.95
+Epoch CV: 2 Total Batch Number: 57100 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 57200 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 57300 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 57400 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 57500 Train accuracy: 0.975
+Epoch CV: 2 Total Batch Number: 57600 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 57700 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 57800 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 57900 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 58000 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 58100 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 58200 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 58300 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 58400 Train accuracy: 1.0
+Epoch CV: 2 Total Batch Number: 58500 Train accuracy: 0.95
+Epoch cv time: 2.0 hr 44.123075024286905 min
+Shuffling entries
+Shuffling complete
+Epoch CV: 3 Total Batch Number: 58600 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 58700 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 58800 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 58900 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 59000 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 59100 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 59200 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 59300 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 59400 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 59500 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 59600 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 59700 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 59800 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 59900 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 60000 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 60100 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 60200 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 60300 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 60400 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 60500 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 60600 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 60700 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 60800 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 60900 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 61000 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 61100 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 61200 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 61300 Train accuracy: 0.975
+Epoch CV: 3 Total Batch Number: 61400 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 61500 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 61600 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 61700 Train accuracy: 1.0
+Epoch CV: 3 Total Batch Number: 61800 Train accuracy: 1.0
+Epoch cv time: 2.0 hr 52.5993780096372 min
+Shuffling entries
+Shuffling complete
+Epoch CV: 4 Total Batch Number: 61900 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 62000 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 62100 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 62200 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 62300 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 62400 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 62500 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 62600 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 62700 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 62800 Train accuracy: 0.975
+Epoch CV: 4 Total Batch Number: 62900 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 63000 Train accuracy: 0.975
+Epoch CV: 4 Total Batch Number: 63100 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 63200 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 63300 Train accuracy: 0.975
+Epoch CV: 4 Total Batch Number: 63400 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 63500 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 63600 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 63700 Train accuracy: 0.975
+Epoch CV: 4 Total Batch Number: 63800 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 63900 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 64000 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 64100 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 64200 Train accuracy: 0.975
+Epoch CV: 4 Total Batch Number: 64300 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 64400 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 64500 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 64600 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 64700 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 64800 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 64900 Train accuracy: 1.0
+Epoch CV: 4 Total Batch Number: 65000 Train accuracy: 1.0
+Epoch cv time: 3.0 hr 1.0715317845344543 min
+
+
+
+ Test Accuracy 
+
+
+
+
+batch number: 1000 test accuracy: 0.963
+batch number: 2000 test accuracy: 0.962
+batch number: 3000 test accuracy: 0.959
+batch number: 4000 test accuracy: 0.96
+batch number: 5000 test accuracy: 0.9634
+batch number: 6000 test accuracy: 0.9625
+batch number: 7000 test accuracy: 0.9634285714285714
+batch number: 8000 test accuracy: 0.963375
+batch number: 9000 test accuracy: 0.963
+batch number: 10000 test accuracy: 0.9615
+batch number: 11000 test accuracy: 0.9620909090909091
+batch number: 12000 test accuracy: 0.9614166666666667
+batch number: 13000 test accuracy: 0.9611538461538461
+batch number: 14000 test accuracy: 0.9611428571428572
+batch number: 15000 test accuracy: 0.961
+batch number: 16000 test accuracy: 0.9610625
+batch number: 17000 test accuracy: 0.960764705882353
+batch number: 18000 test accuracy: 0.9603333333333334
+batch number: 19000 test accuracy: 0.9603684210526315
+batch number: 20000 test accuracy: 0.96065
+batch number: 21000 test accuracy: 0.9604285714285714
+batch number: 22000 test accuracy: 0.9603636363636363
+batch number: 23000 test accuracy: 0.9598695652173913
+batch number: 24000 test accuracy: 0.9602083333333333
+batch number: 25000 test accuracy: 0.96004
+batch number: 26000 test accuracy: 0.9598076923076924
+batch number: 27000 test accuracy: 0.9601481481481482
+batch number: 28000 test accuracy: 0.96
+batch number: 29000 test accuracy: 0.960103448275862
+batch number: 30000 test accuracy: 0.9599333333333333
+batch number: 31000 test accuracy: 0.9596451612903226
+batch number: 32000 test accuracy: 0.959875
+batch number: 33000 test accuracy: 0.9596969696969697
+batch number: 34000 test accuracy: 0.9598529411764706
+batch number: 35000 test accuracy: 0.9598
+batch number: 36000 test accuracy: 0.9599166666666666
+batch number: 37000 test accuracy: 0.9598378378378378
+batch number: 38000 test accuracy: 0.9598684210526316
+batch number: 39000 test accuracy: 0.9598205128205128
+batch number: 40000 test accuracy: 0.959875
+batch number: 41000 test accuracy: 0.9600487804878048
+batch number: 42000 test accuracy: 0.9601666666666666
+batch number: 43000 test accuracy: 0.9600930232558139
+batch number: 44000 test accuracy: 0.9597727272727272
+batch number: 45000 test accuracy: 0.9596888888888889
+batch number: 46000 test accuracy: 0.9597173913043479
+batch number: 47000 test accuracy: 0.9594680851063829
+batch number: 48000 test accuracy: 0.9595
+batch number: 49000 test accuracy: 0.9592448979591837
+batch number: 50000 test accuracy: 0.9592
+batch number: 51000 test accuracy: 0.9592745098039216
+batch number: 52000 test accuracy: 0.9593461538461538
+batch number: 53000 test accuracy: 0.9596603773584905
+batch number: 54000 test accuracy: 0.9594814814814815
+batch number: 55000 test accuracy: 0.9593454545454545
+batch number: 56000 test accuracy: 0.959375
+batch number: 57000 test accuracy: 0.9594912280701754
+batch number: 58000 test accuracy: 0.9594482758620689
+batch number: 59000 test accuracy: 0.9595762711864407
+batch number: 60000 test accuracy: 0.9596333333333333
+batch number: 61000 test accuracy: 0.9596229508196721
+batch number: 62000 test accuracy: 0.9592258064516129
+batch number: 63000 test accuracy: 0.9591904761904761
+batch number: 64000 test accuracy: 0.959140625
+batch number: 65000 test accuracy: 0.9592923076923077
+batch number: 66000 test accuracy: 0.9593181818181818
+batch number: 67000 test accuracy: 0.9594477611940299
+batch number: 68000 test accuracy: 0.9594264705882353
+batch number: 69000 test accuracy: 0.9594492753623188
+batch number: 70000 test accuracy: 0.9594571428571429
+batch number: 71000 test accuracy: 0.9593661971830986
+batch number: 72000 test accuracy: 0.9594583333333333
+batch number: 73000 test accuracy: 0.9594931506849315
+batch number: 74000 test accuracy: 0.9594594594594594
+batch number: 75000 test accuracy: 0.9595466666666667
+batch number: 76000 test accuracy: 0.9596184210526316
+batch number: 77000 test accuracy: 0.9597012987012987
+batch number: 78000 test accuracy: 0.9598717948717949
+batch number: 79000 test accuracy: 0.9598607594936709
+batch number: 80000 test accuracy: 0.959775
+batch number: 81000 test accuracy: 0.9598395061728395
+batch number: 82000 test accuracy: 0.9598292682926829
+batch number: 83000 test accuracy: 0.9598795180722891
+batch number: 84000 test accuracy: 0.9599285714285715
+batch number: 85000 test accuracy: 0.9598705882352941
+batch number: 86000 test accuracy: 0.9598255813953488
+batch number: 87000 test accuracy: 0.9598965517241379
+batch number: 88000 test accuracy: 0.9599772727272727
+batch number: 89000 test accuracy: 0.9598539325842697
+batch number: 90000 test accuracy: 0.9597888888888889
+batch number: 91000 test accuracy: 0.9598241758241758
+batch number: 92000 test accuracy: 0.9597934782608696
+batch number: 93000 test accuracy: 0.959763440860215
+batch number: 94000 test accuracy: 0.9598297872340426
+batch number: 95000 test accuracy: 0.9598631578947369
+batch number: 96000 test accuracy: 0.9599895833333333
+batch number: 97000 test accuracy: 0.9600412371134021
+batch number: 98000 test accuracy: 0.9601122448979592
+batch number: 99000 test accuracy: 0.9601414141414142
+batch number: 100000 test accuracy: 0.96006
+batch number: 101000 test accuracy: 0.9601584158415841
+batch number: 102000 test accuracy: 0.9601274509803922
+batch number: 103000 test accuracy: 0.9600970873786407
+batch number: 104000 test accuracy: 0.9601538461538461
+batch number: 105000 test accuracy: 0.9602380952380952
+batch number: 106000 test accuracy: 0.9602830188679246
+batch number: 107000 test accuracy: 0.9602429906542056
+batch number: 108000 test accuracy: 0.9603148148148148
+batch number: 109000 test accuracy: 0.9603394495412844
+batch number: 110000 test accuracy: 0.9602363636363637
+batch number: 111000 test accuracy: 0.9601531531531532
+batch number: 112000 test accuracy: 0.9601964285714286
+batch number: 113000 test accuracy: 0.9601858407079646
+batch number: 114000 test accuracy: 0.9601491228070176
+batch number: 115000 test accuracy: 0.960104347826087
+batch number: 116000 test accuracy: 0.9601293103448276
+batch number: 117000 test accuracy: 0.9601538461538461
+batch number: 118000 test accuracy: 0.9600169491525423
+batch number: 119000 test accuracy: 0.9599495798319327
+batch number: 120000 test accuracy: 0.9599166666666666
+batch number: 121000 test accuracy: 0.9599752066115702
+batch number: 122000 test accuracy: 0.959983606557377
+batch number: 123000 test accuracy: 0.9599674796747968
+batch number: 124000 test accuracy: 0.9599435483870967
+batch number: 125000 test accuracy: 0.959816
+batch number: 126000 test accuracy: 0.9597777777777777
+batch number: 127000 test accuracy: 0.959748031496063
+batch number: 128000 test accuracy: 0.9597109375
+batch number: 129000 test accuracy: 0.9596511627906976
+batch number: 130000 test accuracy: 0.9595
+batch number: 131000 test accuracy: 0.9595419847328245
+batch number: 132000 test accuracy: 0.9595378787878788
+batch number: 133000 test accuracy: 0.9595789473684211
+batch number: 134000 test accuracy: 0.9595895522388059
+batch number: 135000 test accuracy: 0.9596222222222223
+batch number: 136000 test accuracy: 0.959514705882353
+batch number: 137000 test accuracy: 0.9594525547445255
+batch number: 138000 test accuracy: 0.9594710144927536
+batch number: 139000 test accuracy: 0.9595611510791366
+batch number: 140000 test accuracy: 0.95955
+batch number: 141000 test accuracy: 0.9594397163120567
+batch number: 142000 test accuracy: 0.9594366197183098
+batch number: 143000 test accuracy: 0.9594125874125874
+batch number: 144000 test accuracy: 0.9594027777777778
+batch number: 145000 test accuracy: 0.9593793103448276
+batch number: 146000 test accuracy: 0.9594041095890411
+batch number: 147000 test accuracy: 0.9593809523809523
+batch number: 148000 test accuracy: 0.9593986486486487
+batch number: 149000 test accuracy: 0.9594295302013423
+batch number: 150000 test accuracy: 0.9593933333333333
+batch number: 151000 test accuracy: 0.9594039735099338
+batch number: 152000 test accuracy: 0.9593223684210527
+batch number: 153000 test accuracy: 0.9593398692810458
+batch number: 154000 test accuracy: 0.9593441558441559
+batch number: 155000 test accuracy: 0.9593935483870968
+batch number: 156000 test accuracy: 0.9594551282051282
+batch number: 157000 test accuracy: 0.9594012738853503
+batch number: 158000 test accuracy: 0.9594493670886076
+batch number: 159000 test accuracy: 0.9594528301886792
+batch number: 160000 test accuracy: 0.9594375
+batch number: 161000 test accuracy: 0.9594906832298137
+batch number: 162000 test accuracy: 0.9595123456790123
+AlexDeep2 Test Accuracy = 0.9594725842144086
+Starting AlexDeep with learning rate 9e-05
+Shuffling entries
